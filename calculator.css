@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .calculator {
+      max-width: 300px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    .screen {
+      font-size: 24px;
+      text-align: right;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+
+    .button {
+      font-size: 20px;
+      padding: 10px;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #eee;
+      transition: background-color 0.2s;
+    }
+
+    .button:hover {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="screen" id="output">0</div>
+    <div class="buttons">
+      <button class="button" onclick="clearOutput()">C</button>
+      <button class="button" onclick="appendSymbol('/')">/</button>
+      <button class="button" onclick="appendSymbol('*')">*</button>
+      <button class="button" onclick="backspace()">&larr;</button>
+      <button class="button" onclick="appendSymbol('7')">7</button>
+      <button class="button" onclick="appendSymbol('8')">8</button>
+      <button class="button" onclick="appendSymbol('9')">9</button>
+      <button class="button" onclick="appendSymbol('-')">-</button>
+      <button class="button" onclick="appendSymbol('4')">4</button>
+      <button class="button" onclick="appendSymbol('5')">5</button>
+      <button class="button" onclick="appendSymbol('6')">6</button>
+      <button class="button" onclick="appendSymbol('+')">+</button>
+      <button class="button" onclick="appendSymbol('1')">1</button>
+      <button class="button" onclick="appendSymbol('2')">2</button>
+      <button class="button" onclick="appendSymbol('3')">3</button>
+      <button class="button" onclick="appendSymbol('0')">0</button>
+      <button class="button" onclick="appendSymbol('.')">.</button>
+      <button class="button" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    const output = document.getElementById('output');
+    let expression = '';
+
+    function appendSymbol(symbol) {
+      expression += symbol;
+      output.innerText = expression;
+    }
+
+    function clearOutput() {
+      expression = '';
+      output.innerText = '0';
+    }
+
+    function backspace() {
+      expression = expression.slice(0, -1);
+      output.innerText = expression === '' ? '0' : expression;
+    }
+
+    function calculate() {
+      try {
+        expression = eval(expression).toString();
+        output.innerText = expression;
+      } catch (error) {
+        output.innerText = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
