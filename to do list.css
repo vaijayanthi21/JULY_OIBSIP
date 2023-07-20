@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notebook To-Do List</title>
+  <style>
+    /* CSS for Notebook theme */
+    body {
+      background-color: beige;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      background-color: cream;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background-color: pink;
+      padding: 10px;
+      text-align: center;
+      font-size: 24px;
+      color: brown;
+    }
+
+    .todo-list {
+      margin-top: 20px;
+    }
+
+    .task {
+      margin-bottom: 10px;
+    }
+
+    .timeline {
+      background-color: pink;
+      color: brown;
+      padding: 10px;
+    }
+
+    .dashboard {
+      background-color: pink;
+      color: brown;
+      padding: 10px;
+    }
+
+    .calendar {
+      background-color: pink;
+      color: brown;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Notebook To-Do List</div>
+
+    <!-- To-Do List -->
+    <div class="todo-list">
+      <ul id="taskList">
+        <!-- Tasks will be added dynamically here using JavaScript -->
+      </ul>
+      <input type="text" id="newTaskInput" placeholder="Add new task">
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="timeline" id="timeline">
+      <!-- Your timeline content goes here -->
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="dashboard" id="dashboard">
+      <!-- Your dashboard content goes here -->
+    </div>
+
+    <!-- Calendar Section -->
+    <div class="calendar" id="calendar">
+      <!-- Your calendar content goes here -->
+    </div>
+
+    <script>
+      // JavaScript for the To-Do List functionality
+      function addTask() {
+        const taskInput = document.getElementById("newTaskInput");
+        const taskList = document.getElementById("taskList");
+        const taskText = taskInput.value.trim();
+        if (taskText !== "") {
+          const newTask = document.createElement("li");
+          newTask.textContent = taskText;
+          taskList.appendChild(newTask);
+          taskInput.value = "";
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>
