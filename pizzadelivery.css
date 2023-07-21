@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pizza Delivery App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .menu, .side-dishes, .beverages, .delivery, .contact, .enquiry {
+      margin-bottom: 40px;
+    }
+
+    .pizza-items, .side-dishes, .beverages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .pizza, .side-dish, .beverage {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .pizza img, .side-dish img, .beverage img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .pizza h3, .side-dish h3, .beverage h3 {
+      margin-top: 10px;
+    }
+
+    .delivery form {
+      margin-top: 10px;
+    }
+
+    .delivery input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .delivery button[type="submit"] {
+      background-color: #ff4500;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact, .enquiry {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .enquiry form {
+      margin-top: 10px;
+    }
+
+    .enquiry textarea {
+      width: 100%;
+      height: 100px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .enquiry button[type="submit"] {
+      background-color: #ff4500;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pizzeriaaa-the pizza mania</h1>
+
+    <!-- Menu -->
+    <div class="menu">
+      <h2>Menu</h2>
+      <div class="pizza-items">
+        <div class="pizza">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKcIK0in2_TWCFZqFwhmw8fKLo_zisv3jj5MgSyd-Z_g&s" alt="Margherita">
+          <h3>MARGHERITA</h3>
+          <p>A hugely popular Margherita, with a deliciously tangy single cheese topping</p>
+          <p>Price: ₹149</p>
+        </div>
+        <div class="pizza">
+          <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.shutterstock.com%2Fshutterstock%2Fphotos%2F1131709991%2Fdisplay_1500%2Fstock-photo-peppy-paneer-pizza-1131709991.jpg&tbnid=3TzU9xlqAqgTCM&vet=12ahUKEwj_7IXOgZ-AAxWPjmMGHfh3BswQMygXegUIARCcAg..i&imgrefurl=https%3A%2F%2Fwww.shutterstock.com%2Fimage-photo%2Fpeppy-paneer-pizza-1131709991&docid=j_SGLQWroAmteM&w=1500&h=1225&q=peppy%20paneer%20pizza&ved=2ahUKEwj_7IXOgZ-AAxWPjmMGHfh3BswQMygXegUIARCcAg">
+          <h3>PEPPY PANEER</h3>
+          <p>Chunky paneer with crisp capsicum and spicy red pepper - quite a mouthful!</p>
+          <p>Price: ₹210</p>
+        </div>
+        <div class="pizza">
+          <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi0.wp.com%2Fwww.dominosoffer.co.in%2Fwp-content%2Fuploads%2F2020%2F07%2FDominos-Farm-House-Pizza.jpg%3Ffit%3D800%252C450%26ssl%3D1&tbnid=xA7keyDM5dTkbM&vet=12ahUKEwj9tPWCgp-AAxX9lGMGHWRYA9EQMygRegUIARCRAg..i&imgrefurl=https%3A%2F%2Fwww.dominosoffer.co.in%2Fdaily_offer%2Fdominos-veg-farm-house-pizza%2F&docid=Rme2YfBHKZEo0M&w=800&h=450&q=farmhouse%20pizza&ved=2ahUKEwj9tPWCgp-AAxX9lGMGHWRYA9EQMygRegUIARCRAg">
+          <h3>FARM HOUSE</h3>
+          <p>A pizza that goes ballistic on veggies! Check out this mouth-watering overload of crunchy, crisp capsicum, succulent mushrooms, and fresh tomatoes</p>
+          <p>Price: ₹450</p>
+        </div>
+        <div class="pizza">
+          <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fapi.pizzahut.io%2Fv1%2Fcontent%2Fen-in%2Fin-1%2Fimages%2Fpizza%2Fclassic-onion-capsicum-pan-personal.dad788ecbd3fcc57366462827e31ee05.1.jpg&tbnid=HI7pMteg9LDXrM&vet=12ahUKEwi_nOaTgp-AAxV2mWMGHW06A2EQMygEegUIARD5AQ..i&imgrefurl=https%3A%2F%2Fwww.pizzahut.co.in%2Fmenu%2Fpizzas%2Fclassic-onion-capsicum-pan-personal&docid=XLgZ51WMAR8QzM&w=768&h=528&q=onion%20capsicum%20pizza&ved=2ahUKEwi_nOaTgp-AAxV2mWMGHW06A2EQMygEegUIARD5AQ" alt="Fresh Veggie">
+          <h3>FRESH VEGGIE</h3>
+          <p>Onion & Capsicum</p>
+          <p>Price: ₹89</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Side Dishes -->
+    <div class="side-dishes">
+      <h2>Side Dishes</h2>
+      <div class="side-dish">
+        <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fblog.kainexus.com%2Fhubfs%2FFrench%2520fries%25202.jpeg&tbnid=_-mUIAQw-i2U1M&vet=12ahUKEwi1tLDJg5-AAxXyoOkKHUa0BDMQMygTegUIARC0Ag..i&imgrefurl=https%3A%2F%2Fblog.kainexus.com%2Fcontinuous-improvement%2Fculture-of-continuous-improvement%2Ffrench-fries-and-the-culture-imperative&docid=sNwhg_N68gGRJM&w=1821&h=2195&q=Fries&ved=2ahUKEwi1tLDJg5-AAxXyoOkKHUa0BDMQMygTegUIARC0Ag" alt="Fries">
+        <h3>Fries</h3>
+        <p>Price: ₹80</p>
+      </div>
+      <div class="side-dish">
+        <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.wellplated.com%2Fwp-content%2Fuploads%2F2017%2F10%2FHomemade-Baked-Mozzarella-Sticks.jpg&tbnid=Zb--unGi5FlP_M&vet=12ahUKEwjT_L7tg5-AAxXFwaACHUObB0YQMygOegUIARCAAg..i&imgrefurl=https%3A%2F%2Fwww.wellplated.com%2Fbaked-mozzarella-sticks%2F&docid=IMjIV1Vkb8fTPM&w=1200&h=1800&q=baked%20mozzarella%20cheese&ved=2ahUKEwjT_L7tg5-AAxXFwaACHUObB0YQMygOegUIARCAAg" alt="Baked Mozzarella Sticks">
+        <h3>Baked Mozzarella Sticks</h3>
+        <p>Price: ₹150</p>
+      </div>
+    </div>
+
+    <!-- Beverages -->
+    <div class="beverages">
+      <h2>Beverages</h2>
+      <div class="beverage">
+        <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages-1.schellywood.be%2Fthumbnail%2Fnjam-tile-big%2F56749%2Fdsc1534.jpg&tbnid=obHMQwbM2BuyJM&vet=12ahUKEwi-uar9g5-AAxXHqGMGHc0qDIcQMyguegUIARCcAw..i&imgrefurl=https%3A%2F%2Fnjam.tv%2Frecepten%2Fvirgin-mojito&docid=Pr6rvPkhEuJ_wM&w=1000&h=1500&q=virgin%20mojito&ved=2ahUKEwi-uar9g5-AAxXHqGMGHc0qDIcQMyguegUIARCcAw" alt="Virgin Pina Colada">
+        <h3>Virgin Pina Colada</h3>
+        <p>Price: ₹120</p>
+      </div>
+      <div class="beverage">
+        <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.cookclickndevour.com%2Fwp-content%2Fuploads%2F2016%2F05%2Ffruit-punch-recipe-a.jpg&tbnid=3Scml8waPxgJsM&vet=12ahUKEwi5pKiXhJ-AAxXioOkKHan5AxcQMygEegUIARCPAg..i&imgrefurl=https%3A%2F%2Fwww.cookclickndevour.com%2Ffruit-punch-recipe-how-to-make-fruit-punch%2F&docid=4x1M8AC4tFEaBM&w=689&h=1152&q=fruit%20punch&ved=2ahUKEwi5pKiXhJ-AAxXioOkKHan5AxcQMygEegUIARCPAg" alt="Fruit Punch">
+        <h3>Fruit Punch</h3>
+        <p>Price: ₹80</p>
+      </div>
+    </div>
+
+    <!-- Delivery Address and Payment Details -->
+    <div class="delivery">
+      <h2>Delivery Address</h2>
+      <form>
+        <input type="text" placeholder="Enter your address">
+      </form>
+      <h2>Payment</h2>
+      <p>Choose Payment Method:</p>
+      <label>
+        <input type="radio" name="payment" value="upi">
+        UPI
+      </label>
+      <label>
+        <input type="radio" name="payment" value="cash">
+        Cash
+      </label>
+      <label>
+        <input type="radio" name="payment" value="debit_card">
+        Debit Card
+      </label>
+      <label>
+        <input type="radio" name="payment" value="credit_card">
+        Credit Card
+      </label>
+      <button type="submit">Place Order</button>
+    </div>
+
+    <!-- Contact and Enquiry -->
+    <div class="contact">
+      <h2>Contact</h2>
+      <p>Phone: 123-456-7890</p>
+      <p>Email: info@pizzadeliveryapp.com</p>
+    </div>
+    <div class="enquiry">
+      <h2>Enquiry</h2>
+      <form>
+        <textarea placeholder="Enter your enquiry"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
